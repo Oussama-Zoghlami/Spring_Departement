@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Management</title>
+</head>
+<body>
+<h1>Add Event</h1>
+<form th:action="@{/addEvent}" th:object="${event}" method="post">
+    Jour Cours: <input type="date" id="jourCours"  /><br/>
+    Heure Cours: <input type="time" id="heureCours"  /><br/>
+    <input type="submit" value="Add Event" />
+</form>
+
+<hr/>
+
+<h1>Mark Presence</h1>
+<form th:action="@{/markPresence}" method="post">
+    Email: <input type="email" name="email" /><br/>
+    Date: <input type="date" name="jourCours" /><br/>
+    Time: <input type="time" name="heureCours" /><br/>
+    <input type="submit" value="Mark Presence" />
+</form>
+
+<hr/>
+
+<h1>Mark Reussite</h1>
+<form th:action="@{/markReussite}" method="post">
+    Email: <input type="email" name="email" /><br/>
+    Reussite: <input type="text" name="reussite" /><br/>
+    <!-- You can change the input type based on the Reussite type -->
+    <input type="submit" value="Mark Reussite" />
+</form>
+
+<hr/>
+
+<h1>Calculate Absentisme</h1>
+<form th:action="@{/calculateAbsentisme}" method="get">
+    <input type="submit" value="Calculate Absentisme" />
+</form>
+
+<hr/>
+
+<h1>Calculate Reussite</h1>
+<form th:action="@{/calculateReussite}" method="get">
+    <input type="submit" value="Calculate Reussite" />
+</form>
+</body>
+</html>
